@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etTipoEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo de Ejercicio"/>
+
+    <EditText
+        android:id="@+id/etDuracion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etTipoEjercicio"
+        android:layout_marginTop="16dp"
+        android:inputType="number"
+        android:hint="Duración (minutos)"/>
+
+    <EditText
+        android:id="@+id/etDistancia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etDuracion"
+        android:layout_marginTop="16dp"
+        android:inputType="numberDecimal"
+        android:hint="Distancia (km)"/>
+
+    <Button
+        android:id="@+id/btnGuardarEntrenamiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etDistancia"
+        android:layout_marginTop="16dp"
+        android:text="Guardar Entrenamiento"/>
+
+</RelativeLayout>
