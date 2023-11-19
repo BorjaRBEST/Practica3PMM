@@ -1,21 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp">
+
+    <!-- Guía vertical para dividir la pantalla en dos partes iguales -->
+
 
     <Button
         android:id="@+id/btnNuevoEntrenamiento"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nuevo Entrenamiento"/>
+        android:layout_width="180dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="4dp"
+        android:text="Nuevo Entrenamiento"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68" />
+
+    <Button
+        android:id="@+id/btnNuevo1"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
+        android:text="Nuevo Boton1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/btnNuevoEntrenamiento"
+        app:layout_constraintTop_toTopOf="@id/btnNuevoEntrenamiento"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <Button
+        android:id="@+id/btnNuevo2"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="4dp"
+        android:text="Nuevo boton 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnEntrenamientosAnteriores"
+        app:layout_constraintVertical_bias="0.466" />
 
     <Button
         android:id="@+id/btnEntrenamientosAnteriores"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnNuevoEntrenamiento"
-        android:layout_marginTop="16dp"
-        android:text="Entrenamientos Anteriores"/>
+        android:layout_width="180dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="4dp"
+        android:text="Entrenamientos Anteriores"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.677" />
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
