@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp"/>
+            <solid android:color="#80FFFFFF"/> <!-- Cambia el valor alpha (80) según tus preferencias -->
+        </shape>
+    </item>
+</layer-list>
