@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="0dp">
 
-    <!-- ImageView para la imagen de fondo
+    <!-- ImageView para la imagen de fondo-->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,29 +16,114 @@
         android:src="@drawable/fondo"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
-        -->
 
-    <Button
-        android:id="@+id/btnYoga1"
+    <!-- ScrollView para permitir desplazamiento -->
+    <ScrollView
+        android:id="@+id/scrollContainer"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@drawable/btn_background"
-        android:text="PRÁCTICA COMPLETA\n Vinyasa Flow, un calentamiento suave."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.080"
-        tools:layout_editor_absoluteX="0dp" />
-    <Button
-        android:id="@+id/btnYoga2"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@drawable/btn_background"
-        android:text="YOGA RESTAURATIVO\nRelájate, estira. Sin posturas de pie."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
+        <!-- Contenido adicional (botones) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <!-- Botones originales -->
+            <Button
+                android:id="@+id/btnYoga1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/btn_background"
+                android:text="PRÁCTICA COMPLETA\n Vinyasa Flow, un calentamiento suave."
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/btnYoga2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/btn_background"
+                android:text="YOGA RESTAURATIVO\nRelájate, estira. Sin posturas de pie."
+                tools:layout_editor_absoluteX="0dp" />
+            <Button
+                android:id="@+id/btnYoga3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/btn_background"
+                android:text="Nuevo Botón 3"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/btnYoga4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/btn_background"
+                android:text="Nuevo Botón 4"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/btnYoga5"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/btn_background"
+                android:text="Nuevo Botón 5"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/btnYoga6"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/btn_background"
+                android:text="Nuevo Botón 6"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/btnYoga7"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/btn_background"
+                android:text="Nuevo Botón 7"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/btnYoga8"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/btn_background"
+                android:text="Nuevo Botón 8"
+                tools:layout_editor_absoluteX="0dp" />
+            <Button
+                android:id="@+id/btnYoga9"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/btn_background"
+                android:text="Nuevo Botón 9"
+                tools:layout_editor_absoluteX="0dp" />
+            <Button
+                android:id="@+id/btnYoga10"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/btn_background"
+                android:text="Nuevo Botón 10"
+                tools:layout_editor_absoluteX="0dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botón SELECCIONAR -->
     <Button
         android:id="@+id/btnSelectStyle"
         android:layout_width="match_parent"
@@ -46,9 +131,7 @@
         android:text="SELECCIONAR"
         android:backgroundTint="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnYoga1"
-        app:layout_constraintVertical_bias="0.934"
+        android:layout_marginBottom="10dp"
         tools:layout_editor_absoluteX="0dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,7 @@ public class NuevoEntrenamientoActivity extends AppCompatActivity {
 
         Button btnYoga1 = findViewById(R.id.btnYoga1);
         Button btnYoga2 = findViewById(R.id.btnYoga2);
+        Button btnYoga3 = findViewById(R.id.btnYoga3);
         Button btnSelectStyle = findViewById(R.id.btnSelectStyle);
 
         // Configurar listeners para cada botón
@@ -31,6 +32,12 @@ public class NuevoEntrenamientoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 handleButtonClick(btnYoga2);
+            }
+        });
+        btnYoga3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleButtonClick(btnYoga3);
             }
         });
 
