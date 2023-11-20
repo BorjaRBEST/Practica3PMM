@@ -5,43 +5,64 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 public class NuevoEntrenamientoActivity extends AppCompatActivity {
+
+    private Button selectedButton; // Agregamos esta línea para declarar la variable
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nuevo_entrenamiento);
 
-        final EditText etTipoEjercicio = findViewById(R.id.etTipoEjercicio);
-        final EditText etDuracion = findViewById(R.id.etDuracion);
-        final EditText etDistancia = findViewById(R.id.etDistancia);
-        Button btnGuardarEntrenamiento = findViewById(R.id.btnGuardarEntrenamiento);
+        Button btnYoga1 = findViewById(R.id.btnYoga1);
+        Button btnYoga2 = findViewById(R.id.btnYoga2);
+        Button btnSelectStyle = findViewById(R.id.btnSelectStyle);
 
-        btnGuardarEntrenamiento.setOnClickListener(new View.OnClickListener() {
+        // Configurar listeners para cada botón
+        btnYoga1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                // Simular guardar datos en SharedPreferences
-                String tipoEjercicio = etTipoEjercicio.getText().toString();
-                String duracion = etDuracion.getText().toString();
-                String distancia = etDistancia.getText().toString();
+            public void onClick(View v) {
+                handleButtonClick(btnYoga1);
+            }
+        });
 
-                // Validar que los campos no estén vacíos
-                if (!tipoEjercicio.isEmpty() && !duracion.isEmpty() && !distancia.isEmpty()) {
-                    // Puedes guardar los datos en SharedPreferences aquí
+        btnYoga2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleButtonClick(btnYoga2);
+            }
+        });
 
-                    // Mostrar un Toast como simulación de datos guardados
-                    Toast.makeText(NuevoEntrenamientoActivity.this, "Entrenamiento guardado", Toast.LENGTH_SHORT).show();
-
-                    // Volver a la pantalla principal
-                    Intent intent = new Intent(NuevoEntrenamientoActivity.this, MainActivity.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(NuevoEntrenamientoActivity.this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
+        btnSelectStyle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Confirmar la selección y enviar de vuelta a MainActivity
+                if (selectedButton != null) {
+                    String selectedStyle = selectedButton.getText().toString();
+                    setResultAndFinish(selectedStyle);
                 }
             }
         });
+    }
+
+    private void handleButtonClick(Button clickedButton) {
+        // Restaurar el estado inicial del botón previamente seleccionado
+        if (selectedButton != null && !selectedButton.equals(clickedButton)) {
+            selectedButton.setBackgroundResource(R.drawable.btn_background);
+        }
+
+        // Resaltar el botón actual
+        clickedButton.setBackgroundResource(R.drawable.boton_selected_background);
+
+        // Actualizar el botón seleccionado
+        selectedButton = clickedButton;
+    }
+
+    private void setResultAndFinish(String selectedStyle) {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra("selectedStyle", selectedStyle);
+        setResult(RESULT_OK, resultIntent);
+        finish();
     }
 }

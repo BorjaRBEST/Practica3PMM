@@ -8,29 +8,36 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button btnNuevoEntrenamiento;
+    static final int SELECT_STYLE_REQUEST_CODE = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnNuevoEntrenamiento = findViewById(R.id.btnNuevoEntrenamiento);
-        Button btnEntrenamientosAnteriores = findViewById(R.id.btnEntrenamientosAnteriores);
+        btnNuevoEntrenamiento = findViewById(R.id.btnNuevoEntrenamiento);
 
         btnNuevoEntrenamiento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent;
-                intent = new Intent(MainActivity.this, NuevoEntrenamientoActivity.class);
-                startActivity(intent);
+                // Abrir la actividad de selección de estilo
+                Intent intent = new Intent(MainActivity.this, NuevoEntrenamientoActivity.class);
+                startActivityForResult(intent, SELECT_STYLE_REQUEST_CODE);
             }
         });
 
-        btnEntrenamientosAnteriores.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, EntrenamientosAnterioresActivity.class);
-                startActivity(intent);
-            }
-        });
+        // Otros listeners...
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == SELECT_STYLE_REQUEST_CODE && resultCode == RESULT_OK) {
+            // Actualizar el texto del botón de estilo en la pantalla principal
+            String selectedStyle = data.getStringExtra("selectedStyle");
+            btnNuevoEntrenamiento.setText("Estilo: " + selectedStyle);
+        }
     }
 }
