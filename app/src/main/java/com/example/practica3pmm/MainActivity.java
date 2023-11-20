@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == SELECT_STYLE_REQUEST_CODE && resultCode == RESULT_OK) {
             // Actualizar el texto del botón de estilo en la pantalla principal
             String selectedStyle = data.getStringExtra("selectedStyle");
-            btnNuevoEntrenamiento.setText("Estilo: " + selectedStyle);
+            btnNuevoEntrenamiento.setText("Estilo:\n " + selectedStyle);
         }
     }
 }
