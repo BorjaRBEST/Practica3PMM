@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="0dp">
 
-    <!-- ImageView para la imagen de fondo
+    <!-- ImageView para la imagen de fondo -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,10 +16,10 @@
         android:src="@drawable/fondo"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
-        -->
+
 
     <Button
-        android:id="@+id/btnYoga1"
+        android:id="@+id/btnZona1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/btn_background"
@@ -29,7 +29,7 @@
         app:layout_constraintVertical_bias="0.080"
         tools:layout_editor_absoluteX="0dp" />
     <Button
-        android:id="@+id/btnYoga2"
+        android:id="@+id/btnZona2"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/btn_background"
@@ -40,13 +40,13 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/btnSelectStyle"
+        android:id="@+id/btnSelectZona"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SELECCIONAR"
         android:backgroundTint="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnYoga1"
+        app:layout_constraintTop_toBottomOf="@id/btnZona1"
         app:layout_constraintVertical_bias="0.934"
         tools:layout_editor_absoluteX="0dp" />
 

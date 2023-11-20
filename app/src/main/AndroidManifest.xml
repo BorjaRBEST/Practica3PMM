@@ -23,7 +23,7 @@
         </activity>
 
         <activity android:name=".NuevoEntrenamientoActivity" />
-        <activity android:name=".EntrenamientosAnterioresActivity" />
+        <activity android:name=".SelectorZonaTrabajoActivity" />
         <!-- Agrega aquí otras actividades según sea necesario -->
 
     </application>

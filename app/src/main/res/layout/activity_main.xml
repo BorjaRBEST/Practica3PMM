@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="0dp">
 
-    <!-- ImageView para la imagen de fondo -->
+    <!-- ImageView para la imagen de fondo
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,6 +16,7 @@
         android:src="@drawable/fondo"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
+        -->
 
     <Button
         android:id="@+id/btnNuevoEntrenamiento"
@@ -58,11 +59,11 @@
         android:background="@drawable/btn_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btnEntrenamientosAnteriores"
+        app:layout_constraintTop_toTopOf="@id/btnZonaTrabajo"
         app:layout_constraintVertical_bias="0.466" />
 
     <Button
-        android:id="@+id/btnEntrenamientosAnteriores"
+        android:id="@+id/btnZonaTrabajo"
         android:layout_width="180dp"
         android:layout_height="90dp"
         android:layout_marginEnd="4dp"

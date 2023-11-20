@@ -8,6 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button btnZonaTrabajo;
     private Button btnNuevoEntrenamiento;
     static final int SELECT_STYLE_REQUEST_CODE = 1;
 
@@ -26,8 +27,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, SELECT_STYLE_REQUEST_CODE);
             }
         });
+        btnZonaTrabajo = findViewById(R.id.btnZonaTrabajo);
 
-        // Otros listeners...
+        btnZonaTrabajo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Abrir la actividad de zona de trabajo
+                Intent intent = new Intent(MainActivity.this, SelectorZonaTrabajoActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
