@@ -34,7 +34,7 @@
 
             <!-- Botones originales -->
             <Button
-                android:id="@+id/btnYoga1"
+                android:id="@+id/btnMusica1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
@@ -43,7 +43,7 @@
                 tools:layout_editor_absoluteX="0dp" />
 
             <Button
-                android:id="@+id/btnYoga2"
+                android:id="@+id/btnMusica2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
@@ -51,7 +51,7 @@
                 android:text="YOGA RESTAURATIVO\nRelájate, estira. Sin posturas de pie."
                 tools:layout_editor_absoluteX="0dp" />
             <Button
-                android:id="@+id/btnYoga3"
+                android:id="@+id/btnMusica3"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
@@ -60,7 +60,7 @@
                 tools:layout_editor_absoluteX="0dp" />
 
             <Button
-                android:id="@+id/btnYoga4"
+                android:id="@+id/btnMusica4"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
@@ -69,7 +69,7 @@
                 tools:layout_editor_absoluteX="0dp" />
 
             <Button
-                android:id="@+id/btnYoga5"
+                android:id="@+id/btnMusica5"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
@@ -78,7 +78,7 @@
                 tools:layout_editor_absoluteX="0dp" />
 
             <Button
-                android:id="@+id/btnYoga6"
+                android:id="@+id/btnMusica6"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
@@ -87,7 +87,7 @@
                 tools:layout_editor_absoluteX="0dp" />
 
             <Button
-                android:id="@+id/btnYoga7"
+                android:id="@+id/btnMusica7"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
@@ -96,7 +96,7 @@
                 tools:layout_editor_absoluteX="0dp" />
 
             <Button
-                android:id="@+id/btnYoga8"
+                android:id="@+id/btnMusica8"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
@@ -104,7 +104,7 @@
                 android:text="Nuevo Botón 8"
                 tools:layout_editor_absoluteX="0dp" />
             <Button
-                android:id="@+id/btnYoga9"
+                android:id="@+id/btnMusica9"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
@@ -112,7 +112,7 @@
                 android:text="Nuevo Botón 9"
                 tools:layout_editor_absoluteX="0dp" />
             <Button
-                android:id="@+id/btnYoga10"
+                android:id="@+id/btnMusica10"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
@@ -125,7 +125,7 @@
 
     <!-- Botón SELECCIONAR -->
     <Button
-        android:id="@+id/btnSelectStyle"
+        android:id="@+id/btnSelectMusica"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="SELECCIONAR"
