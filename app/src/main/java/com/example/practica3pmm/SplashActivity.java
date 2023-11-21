@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static final int TIEMPO_ESPERA = 2000; // 2 segundos
+    private static final int TIEMPO_ESPERA = 4000; // 2 segundos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

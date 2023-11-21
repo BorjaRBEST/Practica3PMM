@@ -12,6 +12,7 @@ import android.widget.NumberPicker;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private Button btnZonaTrabajo;
     private Button btnNuevoEntrenamiento;
     private NumberPicker numberPicker;
@@ -41,9 +42,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        // Controlador para el bóton que te manda a la pantalla de selección de entrenamiento
         btnNuevoEntrenamiento = findViewById(R.id.btnNuevoEntrenamiento);
-
         btnNuevoEntrenamiento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,8 +52,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, SELECT_STYLE_REQUEST_CODE);
             }
         });
-        btnZonaTrabajo = findViewById(R.id.btnZonaTrabajo);
+        // Controlador para el bóton que te manda a la pantalla de selección de entrenamiento
 
+        btnZonaTrabajo = findViewById(R.id.btnZonaTrabajo);
         btnZonaTrabajo.setOnClickListener(new View.OnClickListener() {
 
             @Override
