@@ -15,10 +15,12 @@ public class MainActivity extends AppCompatActivity {
     private static final int SELECT_STYLE_REQUEST_CODE = 1;
     private static final int SELECT_ZONA_REQUEST_CODE = 2;
     private static final int SELECT_REPOSO_REQUEST_CODE = 3;
+    private static final int SELECT_MUSICA_REQUEST_CODE = 4;
 
     private Button btnZonaTrabajo;
     private Button btnNuevoEntrenamiento;
     private Button btnTiempoReposo;
+    private Button btnMusica;
     private NumberPicker numberPicker;
 
 
@@ -79,6 +81,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Controlador para el botón que te manda a la pantalla de selección de música
+        btnMusica = findViewById(R.id.btnEstiloMusica);
+        btnMusica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Abrir la actividad de selección de música
+                Intent intent = new Intent(MainActivity.this, SelectorMusicaActivity.class);
+                startActivityForResult(intent, SELECT_MUSICA_REQUEST_CODE);
+            }
+        });
+
 
 
     }
@@ -98,7 +111,10 @@ public class MainActivity extends AppCompatActivity {
             // Actualizar el texto del botón de tiempo de reposo
             String selectedReposo = data.getStringExtra("selectedReposo");
             btnTiempoReposo.setText("Tiempo de Reposo:\n " + selectedReposo);
+        } else if (requestCode == SELECT_MUSICA_REQUEST_CODE && resultCode == RESULT_OK) {
+            // Actualizar el texto del botón de música
+            String selectedMusica = data.getStringExtra("selectedMusica");
+            btnMusica.setText("Música:\n " + selectedMusica);
         }
     }
-
 }

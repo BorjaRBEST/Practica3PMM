@@ -72,15 +72,15 @@
         android:layout_width="180dp"
         android:layout_height="90dp"
         android:layout_marginEnd="4dp"
-        android:text="Estilo de Música\n"
-        android:textSize="12dp"
-        android:gravity="top|start"
-        android:textAlignment="textStart"
         android:background="@drawable/btn_background"
+        android:gravity="top|start"
+        android:text="Estilo de Música\n"
+        android:textAlignment="textStart"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/btnZonaTrabajo"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintVertical_bias="0.463" />
 
     <Button
         android:id="@+id/btnZonaTrabajo"
