@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Abrir la actividad de zona de trabajo
                 Intent intent = new Intent(MainActivity.this, SelectorTiempoReposoActivity.class);
-                startActivityForResult(intent, SELECT_ZONA_REQUEST_CODE);
+                startActivityForResult(intent, SELECT_REPOSO_REQUEST_CODE);
             }
         });
 
