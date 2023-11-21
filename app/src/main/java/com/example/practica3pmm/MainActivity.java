@@ -1,21 +1,46 @@
 package com.example.practica3pmm;
 
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.NumberPicker;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btnZonaTrabajo;
     private Button btnNuevoEntrenamiento;
+    private NumberPicker numberPicker;
     static final int SELECT_STYLE_REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Configurar el NumberPicker
+        numberPicker = findViewById(R.id.npSelectorTiempo);
+        numberPicker.setMinValue(1);
+        numberPicker.setMaxValue(60);
+        numberPicker.setValue(5);
+
+        // Cambiar el tamaño del texto
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            numberPicker.setTextSize(50);
+        }
+
+        numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                // Hacer algo con el nuevo valor (en este caso, imprimirlo)
+                Log.d("NumberPicker", "Nuevo valor: " + newVal + " minutos");
+            }
+        });
+
 
         btnNuevoEntrenamiento = findViewById(R.id.btnNuevoEntrenamiento);
 
@@ -30,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         btnZonaTrabajo = findViewById(R.id.btnZonaTrabajo);
 
         btnZonaTrabajo.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 // Abrir la actividad de zona de trabajo
