@@ -117,7 +117,7 @@
                 android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/btn_background"
-                android:text="Nuevo Botón 10"
+                android:text=""
                 tools:layout_editor_absoluteX="0dp" />
 
         </LinearLayout>
@@ -127,7 +127,7 @@
     <Button
         android:id="@+id/btnSelectStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="SELECCIONAR"
         android:backgroundTint="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,8 +1,19 @@
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape android:shape="rectangle">
-            <corners android:radius="8dp"/>
-            <solid android:color="#80FFFFFF"/>
+<!-- res/drawable/btn_seleccion.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado presionado -->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#4CAF50" /> <!-- Cambia el color de fondo cuando se presiona -->
+            <corners android:radius="8dp" />
+            <stroke android:color="#808080" android:width="2dp" />
         </shape>
     </item>
-</layer-list>
+    <!-- Otros estados (predeterminado) -->
+    <item>
+        <shape>
+            <solid android:color="#80FFFFFF" /> <!-- Cambia el color de fondo predeterminado -->
+            <corners android:radius="8dp" />
+            <stroke android:color="#808080" android:width="2dp" />
+        </shape>
+    </item>
+</selector>
