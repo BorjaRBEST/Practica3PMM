@@ -12,11 +12,15 @@ import android.widget.NumberPicker;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int SELECT_STYLE_REQUEST_CODE = 1;
+    private static final int SELECT_ZONA_REQUEST_CODE = 2;
+    private static final int SELECT_REPOSO_REQUEST_CODE = 3;
 
     private Button btnZonaTrabajo;
     private Button btnNuevoEntrenamiento;
+    private Button btnTiempoReposo;
     private NumberPicker numberPicker;
-    static final int SELECT_STYLE_REQUEST_CODE = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,18 +56,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, SELECT_STYLE_REQUEST_CODE);
             }
         });
-        // Controlador para el bóton que te manda a la pantalla de selección de entrenamiento
 
+        // Controlador para el bóton que te manda a la pantalla de selección de zona de trabajo
         btnZonaTrabajo = findViewById(R.id.btnZonaTrabajo);
         btnZonaTrabajo.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 // Abrir la actividad de zona de trabajo
                 Intent intent = new Intent(MainActivity.this, SelectorZonaTrabajoActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, SELECT_ZONA_REQUEST_CODE);
             }
         });
+
+        // Controlador para el bóton que te manda a la pantalla de selección de reposo
+        btnTiempoReposo = findViewById(R.id.btnTiempoReposo);
+        btnTiempoReposo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Abrir la actividad de zona de trabajo
+                Intent intent = new Intent(MainActivity.this, SelectorTiempoReposoActivity.class);
+                startActivityForResult(intent, SELECT_ZONA_REQUEST_CODE);
+            }
+        });
+
 
 
     }
@@ -75,6 +90,15 @@ public class MainActivity extends AppCompatActivity {
             // Actualizar el texto del botón de estilo en la pantalla principal
             String selectedStyle = data.getStringExtra("selectedStyle");
             btnNuevoEntrenamiento.setText("Estilo:\n " + selectedStyle);
+        } else if (requestCode == SELECT_ZONA_REQUEST_CODE && resultCode == RESULT_OK) {
+            // Actualizar el texto del botón de zona de trabajo
+            String selectedZona = data.getStringExtra("selectedZona");
+            btnZonaTrabajo.setText("Zona de Trabajo:\n " + selectedZona);
+        } else if (requestCode == SELECT_REPOSO_REQUEST_CODE && resultCode == RESULT_OK) {
+            // Actualizar el texto del botón de tiempo de reposo
+            String selectedReposo = data.getStringExtra("selectedReposo");
+            btnTiempoReposo.setText("Tiempo de Reposo:\n " + selectedReposo);
         }
     }
+
 }

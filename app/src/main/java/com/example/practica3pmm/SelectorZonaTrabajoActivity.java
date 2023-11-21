@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class SelectorZonaTrabajoActivity extends AppCompatActivity {
 
-    private Button selectedButton; // Agregamos esta línea para declarar la variable
+    private Button selectedButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,8 +99,8 @@ public class SelectorZonaTrabajoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Confirmar la selección y enviar de vuelta a MainActivity
                 if (selectedButton != null) {
-                    String selectedStyle = selectedButton.getText().toString();
-                    setResultAndFinish(selectedStyle);
+                    String selectedZona = selectedButton.getText().toString();
+                    setResultAndFinish(selectedZona);
                 }
             }
         });
@@ -119,9 +119,9 @@ public class SelectorZonaTrabajoActivity extends AppCompatActivity {
         selectedButton = clickedButton;
     }
 
-    private void setResultAndFinish(String selectedStyle) {
+    private void setResultAndFinish(String selectedZona) {
         Intent resultIntent = new Intent();
-        resultIntent.putExtra("selectedStyle", selectedStyle);
+        resultIntent.putExtra("selectedZona", selectedZona);
         setResult(RESULT_OK, resultIntent);
         finish();
     }

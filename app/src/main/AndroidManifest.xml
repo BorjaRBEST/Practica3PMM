@@ -32,6 +32,8 @@
 
         <activity android:name=".NuevoEntrenamientoActivity" />
         <activity android:name=".SelectorZonaTrabajoActivity" />
+        <activity android:name=".SelectorTiempoReposoActivity" />
+        <activity android:name=".SelectorMusicaActivity" />
 
         <!-- Agrega la actividad SplashActivity -->
 
