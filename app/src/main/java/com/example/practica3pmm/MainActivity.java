@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnNuevoEntrenamiento;
     private Button btnTiempoReposo;
     private Button btnMusica;
+    private Button btnComenzarEntreno;
     private NumberPicker numberPicker;
 
     @Override
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             numberPickerTextView.setTypeface(null, Typeface.BOLD);
         }
 
-        // Controlador para el botón que te manda a la pantalla de selección de entrenamiento
+        // Controlador para el bóton que te manda a la pantalla de selección de entrenamiento
         btnNuevoEntrenamiento = findViewById(R.id.btnNuevoEntrenamiento);
         btnNuevoEntrenamiento.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Controlador para el botón que te manda a la pantalla de selección de zona de trabajo
+        // Controlador para el bóton que te manda a la pantalla de selección de zona de trabajo
         btnZonaTrabajo = findViewById(R.id.btnZonaTrabajo);
         btnZonaTrabajo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Controlador para el botón que te manda a la pantalla de selección de reposo
+        // Controlador para el bóton que te manda a la pantalla de selección de reposo
         btnTiempoReposo = findViewById(R.id.btnTiempoReposo);
         btnTiempoReposo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,28 +95,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Controlador para el botón que inicia el entrenamiento
-        Button btnComenzarEntreno = findViewById(R.id.btnComenzarEntreno);
+        // Agregar controlador para el botón que inicia el entrenamiento
+        btnComenzarEntreno = findViewById(R.id.btnComenzarEntreno);
         btnComenzarEntreno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Obtener los valores seleccionados
-                int duracion = numberPicker.getValue();
-                String estilo = btnNuevoEntrenamiento.getText().toString();
-                String zona = btnZonaTrabajo.getText().toString();
-                String reposo = btnTiempoReposo.getText().toString();
-                String musica = btnMusica.getText().toString();
-
-                // Crear un intent para la actividad de entrenamiento
                 Intent intent = new Intent(MainActivity.this, EntrenamientoActivity.class);
-                intent.putExtra("duracion", duracion);
-                intent.putExtra("estilo", estilo);
-                intent.putExtra("zona", zona);
-                intent.putExtra("reposo", reposo);
-                intent.putExtra("musica", musica);
-
-                // Iniciar la actividad de entrenamiento
-                startActivity(intent);
+                iniciarEntrenamiento();
             }
         });
     }
@@ -155,5 +139,28 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return null;
+    }
+
+    // Método para iniciar el entrenamiento con los valores seleccionados
+    private void iniciarEntrenamiento() {
+        // Obtener los valores seleccionados
+        String estilo = btnNuevoEntrenamiento.getText().toString();
+        String zonaTrabajo = btnZonaTrabajo.getText().toString();
+        String tiempoReposo = btnTiempoReposo.getText().toString();
+        String musica = btnMusica.getText().toString();
+        int tiempoSesion = numberPicker.getValue();
+
+        // Crear un intent para la actividad de entrenamiento
+        Intent intent = new Intent(MainActivity.this, EntrenamientoActivity.class);
+
+        // Pasar los valores como extras al intent
+        intent.putExtra("estilo", estilo);
+        intent.putExtra("zona", zonaTrabajo);
+        intent.putExtra("reposo", tiempoReposo);
+        intent.putExtra("musica", musica);
+        intent.putExtra("duracion", tiempoSesion);
+
+        // Iniciar la actividad de entrenamiento
+        startActivity(intent);
     }
 }
