@@ -4,11 +4,17 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+
+import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,16 +43,17 @@ public class MainActivity extends AppCompatActivity {
 
         // Cambiar el tamaño del texto
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            numberPicker.setTextSize(50);
+            numberPicker.setTextSize(60);
         }
 
-        numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                // Hacer algo con el nuevo valor (en este caso, imprimirlo)
-                Log.d("NumberPicker", "Nuevo valor: " + newVal + " minutos");
-            }
-        });
+        // Obtener el TextView del NumberPicker para modificar su estilo
+        TextView numberPickerTextView = findNumberPickerTextView(numberPicker);
+
+        // Aplicar estilo al TextView del NumberPicker
+        if (numberPickerTextView != null) {
+            numberPickerTextView.setTextColor(ContextCompat.getColor(this, R.color.morado));
+            numberPickerTextView.setTypeface(null, Typeface.BOLD);
+        }
 
         // Controlador para el bóton que te manda a la pantalla de selección de entrenamiento
         btnNuevoEntrenamiento = findViewById(R.id.btnNuevoEntrenamiento);
@@ -91,9 +98,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, SELECT_MUSICA_REQUEST_CODE);
             }
         });
-
-
-
     }
 
     @Override
@@ -117,4 +121,18 @@ public class MainActivity extends AppCompatActivity {
             btnMusica.setText("Música:\n " + selectedMusica);
         }
     }
+
+    // Método para encontrar el TextView dentro de un NumberPicker
+    private TextView findNumberPickerTextView(NumberPicker numberPicker) {
+        for (int i = 0; i < numberPicker.getChildCount(); i++) {
+            View child = numberPicker.getChildAt(i);
+
+            if (child instanceof EditText) {
+                return (TextView) child;
+            }
+        }
+
+        return null;
+    }
+
 }

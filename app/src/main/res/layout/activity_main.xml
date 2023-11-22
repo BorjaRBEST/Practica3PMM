@@ -26,14 +26,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Tiempo de Sesión"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/npSelectorTiempo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973"
-        app:layout_constraintt="@id/npSelectorTiempo" />
+        app:layout_constraintVertical_bias="0.973" />
 
     <NumberPicker
         android:id="@+id/npSelectorTiempo"
@@ -49,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="25dp" />
     <!-- Etiqueta "minutos" -->
     <TextView
@@ -57,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="minutos"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/npSelectorTiempo"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +66,7 @@
 
     <Button
         android:id="@+id/btnNuevoEntrenamiento"
-        android:layout_width="180dp"
+        android:layout_width="160dp"
         android:layout_height="90dp"
         android:layout_marginStart="4dp"
         android:text="Estilo\n"
@@ -82,12 +81,13 @@
 
     <Button
         android:id="@+id/btnTiempoReposo"
-        android:layout_width="180dp"
+        android:layout_width="160dp"
         android:layout_height="90dp"
         android:text="Savasana\n"
         android:textSize="14dp"
         android:gravity="top|start"
         android:textAlignment="textStart"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btn_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/btnNuevoEntrenamiento"
@@ -96,9 +96,10 @@
 
     <Button
         android:id="@+id/btnEstiloMusica"
-        android:layout_width="180dp"
+        android:layout_width="160dp"
         android:layout_height="90dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/btn_background"
         android:gravity="top|start"
         android:text="Estilo de Música\n"
@@ -107,22 +108,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/btnZonaTrabajo"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintVertical_bias="0.455" />
 
     <Button
         android:id="@+id/btnZonaTrabajo"
-        android:layout_width="180dp"
+        android:layout_width="160dp"
         android:layout_height="90dp"
-        android:layout_marginEnd="4dp"
-        android:text="Enfocarse en...\n"
-        android:textSize="14dp"
-        android:gravity="top|start"
-        android:textAlignment="textStart"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/btn_background"
+        android:gravity="top|start"
+        android:text="Enfocarse en...\n"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677" />
+        app:layout_constraintVertical_bias="0.672" />
 
     <Button
         android:id="@+id/btnComenzarEntreno"
