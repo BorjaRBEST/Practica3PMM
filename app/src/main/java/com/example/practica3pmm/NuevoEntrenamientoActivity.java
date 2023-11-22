@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class NuevoEntrenamientoActivity extends AppCompatActivity {
 
-    private Button selectedButton; // Agregamos esta línea para declarar la variable
+    private Button selectedButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
